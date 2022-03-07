@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'home.apps.HomeConfig',
+    'chart.apps.ChartConfig',
+    'memo.apps.MemoConfig',
+    'timestamp.apps.TimestampConfig',
+    'userpage.apps.UserpageConfig',
 ]
 
 MIDDLEWARE = [
@@ -73,12 +78,15 @@ WSGI_APPLICATION = 'patternProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+import my_setting
+DATABASES = my_setting.DATABASES
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
