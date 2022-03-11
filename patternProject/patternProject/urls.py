@@ -23,4 +23,5 @@ urlpatterns = [
     path('memo/', include('memo.urls')),
     path('chart/', include('chart.urls')),
     path('user/', include('userpage.urls')),
+    path('chrom/', include('chrom.urls')),
 ]

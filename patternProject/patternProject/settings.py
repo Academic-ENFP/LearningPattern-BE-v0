@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'memo.apps.MemoConfig',
     'timestamp.apps.TimestampConfig',
     'userpage.apps.UserpageConfig',
+    'chrom.apps.ChromConfig',
 ]
 
 MIDDLEWARE = [
