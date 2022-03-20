@@ -4,4 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', views.chrom, name='chrom'),
+    path('detectme/', views.detectme, name='detectme'),
 ]
