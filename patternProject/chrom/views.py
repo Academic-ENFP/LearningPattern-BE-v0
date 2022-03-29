@@ -77,18 +77,18 @@ class VideoCamera(object):
             #         print("녹화 중")
             #         out.write(self.frame)
                 
-            # #     if(cv2.waitKey(de) != -1):
-            # #         break
-            # #     else:
-            # #         print('no frame')
-            # #         break
-            # # else:
-            # #     print("can't open camera.")
+            #     if(cv2.waitKey(de) != -1):
+            #         break
+            #     else:
+            #         print('no frame')
+            #         break
+            # else:
+            #     print("can't open camera.")
             
             
-            # self.video.release()
-            # # out.release()
-            # cv2.destroyAllWindows()
+            self.video.release()
+            # out.release()
+            cv2.destroyAllWindows()
             
             
             
@@ -134,3 +134,4 @@ def detectme(request):
 # 이미지를 폴더에 저장하기
 
 # 프레임이 없어서 저장이 안됨
+# drf ,  장고프레임워크 작성

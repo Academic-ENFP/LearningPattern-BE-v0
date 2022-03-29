@@ -6,3 +6,4 @@ from django.http import HttpResponse
 
 def home(request):
     return HttpResponse("Hello, world. You're at the Home index.")
+    # return render(request, 'chrom.html')

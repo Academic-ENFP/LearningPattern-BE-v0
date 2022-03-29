@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'timestamp.apps.TimestampConfig',
     'userpage.apps.UserpageConfig',
     'chrom.apps.ChromConfig',
+    'quickapi.apps.QuickapiConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Pagination 페이지네이션 사용
+REST_FRAMEWORK ={
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    # ]
+    'DEFAILT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE' : 2
+}
