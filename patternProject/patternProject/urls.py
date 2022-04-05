@@ -26,7 +26,6 @@ router.register(r'lectures', views.LectureViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('quickapi/', include('rest_framework.urls', namespace='rest_framework')),
     path('', include('home.urls')),
     path('stamp/', include('timestamp.urls')),
     path('memo/', include('memo.urls')),
@@ -34,5 +33,7 @@ urlpatterns = [
     path('user/', include('userpage.urls')),
     path('chrom/', include('chrom.urls')),
     path('api/', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('quickapi/', include("quickapi.urls")),
+    path("quickapi/auth", include("knox.urls")),
 ]
