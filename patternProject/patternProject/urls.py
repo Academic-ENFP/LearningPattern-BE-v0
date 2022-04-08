@@ -20,19 +20,18 @@ from rest_framework import routers
 # from patternProject.quickapi import views
 from quickapi import views
 
-router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
-router.register(r'lectures', views.LectureViewSet)
+# router = routers.DefaultRouter()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('quickapi/', include('rest_framework.urls', namespace='rest_framework')),
+    # path('quickapi/', include('rest_framework.urls', namespace='rest_framework')),
+    path('quickapi/', include('quickapi.urls')),
     path('', include('home.urls')),
     path('stamp/', include('timestamp.urls')),
     path('memo/', include('memo.urls')),
     path('chart/', include('chart.urls')),
-    path('user/', include('userpage.urls')),
+    path('userpage/', include('userpage.urls')),
     path('chrom/', include('chrom.urls')),
-    path('api/', include(router.urls)),
+    # path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

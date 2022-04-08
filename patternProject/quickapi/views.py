@@ -1,18 +1,21 @@
 from django.shortcuts import render
 from home.models import User,Lecture
-from rest_framework import viewsets
-from rest_framework import permissions
+# from patternProject.quickapi import serializers
 from quickapi.serializers import UserSerializer, LectureSerializer
+from rest_framework import generics, status, viewsets, permissions
+from rest_framework.response import Response
+from rest_framework.decorators import api_view, permission_classes, authentication_classes
+from rest_framework.permissions import AllowAny, IsAuthenticated
 
-
-class UserViewSet(viewsets.ModelViewSet):
-    # 사용자를 보거난 편집할 수 있는 API endpoint
-    queryset = User.objects.all().order_by()
+# 회원가입
+class UserCreate(generics.CreateAPIView):
+    queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]
-    
 
-class LectureViewSet(viewsets.ModelViewSet):
-    queryset = Lecture.objects.all().order_by()
-    serializer_class = LectureSerializer
-    permission_classes = [permissions.IsAuthenticated]
+
+# 로그인
+# @api_view(['POST'])
+# @permission_classes([AllowAny])
+# def signin(request):
+#     if request.method == "POST":
+#         serializers = UserSerializer
