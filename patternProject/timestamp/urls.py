@@ -3,7 +3,9 @@ from rest_framework.routers import DefaultRouter
 from . import views
 
 router = DefaultRouter()
-router.register(r'lecture',views.LectureInfoViewSet)
+router.register(r'lecture',views.LectureInfoViewSet,basename="lecture")
+router.register(r'keyboard',views.KeyboardInterruptSerializer, basename="keyboard")
+
 
 # urlpatterns = [
 #     path('lecture/', views.lecture_list),
