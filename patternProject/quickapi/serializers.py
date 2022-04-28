@@ -27,3 +27,5 @@ class LectureSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lecture
         fields = ('lec_idx','subject','professor','student','class_time','learing_time','completion')
+
+
