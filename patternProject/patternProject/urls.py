@@ -27,7 +27,7 @@ urlpatterns = [
     # path('quickapi/', include('rest_framework.urls', namespace='rest_framework')),
     path('quickapi/', include('quickapi.urls')),
     path('', include('home.urls')),
-    path('stamp/', include('timestamp.urls')),
+    path('lecture/', include('timestamp.urls')),
     path('memo/', include('memo.urls')),
     path('chart/', include('chart.urls')),
     path('userpage/', include('userpage.urls')),

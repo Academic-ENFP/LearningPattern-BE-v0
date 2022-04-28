@@ -4,7 +4,7 @@ from . import views
 
 router = DefaultRouter()
 router.register(r'lecture',views.LectureInfoViewSet,basename="lecture")
-router.register(r'keyboard',views.KeyboardInterruptSerializer, basename="keyboard")
+router.register(r'keyboard',views.KeyboardInterruptViewSet, basename="keyboard")
 
 
 # urlpatterns = [
