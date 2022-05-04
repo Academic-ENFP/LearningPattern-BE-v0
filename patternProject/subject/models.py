@@ -17,7 +17,7 @@ class Lecture(models.Model):
     lecture_time = models.TimeField()
     learning_time = models.TimeField()
 
-class Memo(models.Model):
+class Notes(models.Model):
     lecture = models.ForeignKey(
         Lecture, on_delete=models.CASCADE, related_name='lecture')
     title = models.CharField()
