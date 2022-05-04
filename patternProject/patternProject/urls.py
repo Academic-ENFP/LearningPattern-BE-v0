@@ -31,7 +31,7 @@ urlpatterns = [
     path('memo/', include('memo.urls')),
     path('chart/', include('chart.urls')),
     path('userpage/', include('userpage.urls')),
-    path('chrom/', include('chrom.urls')),
+    path('chrome/', include('chrome.urls')),
     # path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

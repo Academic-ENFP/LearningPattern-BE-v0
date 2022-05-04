@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'memo.apps.MemoConfig',
     'timestamp.apps.TimestampConfig',
     'userpage.apps.UserpageConfig',
-    'chrom.apps.ChromConfig',
+    'chrome.apps.ChromConfig',
     'quickapi.apps.QuickapiConfig',
     'rest_framework',
 ]
