@@ -27,11 +27,12 @@ urlpatterns = [
     # path('quickapi/', include('rest_framework.urls', namespace='rest_framework')),
     path('quickapi/', include('quickapi.urls')),
     path('', include('home.urls')),
-    path('lecture/', include('timestamp.urls')),
+    path('subject/', include('subject.urls')),
+    path('analysis/', include('analysis.urls')),
     path('memo/', include('memo.urls')),
     path('chart/', include('chart.urls')),
     path('userpage/', include('userpage.urls')),
-    path('chrom/', include('chrom.urls')),
+    path('chrome/', include('chrome.urls')),
     # path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
