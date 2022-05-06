@@ -20,7 +20,6 @@ from rest_framework import routers
 # from patternProject.quickapi import views
 from quickapi import views
 
-# router = routers.DefaultRouter()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,10 +28,6 @@ urlpatterns = [
     path('', include('home.urls')),
     path('subject/', include('subject.urls')),
     path('analysis/', include('analysis.urls')),
-    path('memo/', include('memo.urls')),
-    path('chart/', include('chart.urls')),
-    path('userpage/', include('userpage.urls')),
     path('chrome/', include('chrome.urls')),
-    # path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
