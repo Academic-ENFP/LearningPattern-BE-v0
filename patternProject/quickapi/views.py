@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from home.models import User,Lecture
+from home.models import User
 # from patternProject.quickapi import serializers
-from quickapi.serializers import UserSerializer, LectureSerializer
+from quickapi.serializers import UserSerializer
 from rest_framework import generics, status, viewsets, permissions
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes, authentication_classes

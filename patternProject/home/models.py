@@ -70,43 +70,6 @@ class User(AbstractBaseUser):
     def __str__(self):
         return self.id
     
-
-
-
-class Lecture(models.Model):
-    choice_state = (
-        ('before', 'before'),
-        ('ongoing', 'ongoing'),
-        ('completed','completed')
-    )
-    lec_idx = models.AutoField(primary_key=True)
-    subject = models.CharField(max_length=20)
-    professor = models.CharField(max_length=20)
-    student = models.ForeignKey("User", related_name="student", on_delete=models.CASCADE, db_column="student")
-    class_time = models.TimeField(auto_now=False, auto_now_add=False)
-    learing_time = models.TimeField(auto_now=False, auto_now_add=False)
-    completion = models.DateTimeField(auto_now=False, auto_now_add=False)
-    state = models.CharField(max_length=20, choices=choice_state)
-    url = models.URLField(max_length=200)
-    
-    def __str__(self):
-        return self.lec_idx
-
-
-class keyboard(models.Model):
-    EVENT = (
-        ('back','back'),
-        ('pause','pause'),
-    )
-    kb_idx = models.AutoField(primary_key=True)
-    lec = models.ForeignKey("Lecture", related_name="lec", on_delete=models.CASCADE, db_column="lec")
-    event = models.CharField(max_length=10, choices=EVENT)
-    lec_occur = models.CharField(max_length=20)
-    lec_done = models.CharField(max_length=20)
-    learn_occur = models.CharField(max_length=20)
-    learn_done = models.CharField(max_length=20)
-    
-    
     
 # class webcam(models.Model):
 #     cam_idx = models.AutoField(primary_key=True)

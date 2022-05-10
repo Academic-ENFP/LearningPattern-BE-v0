@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from rest_framework.decorators import api_view
-
+from django.http import HttpResponse
 # Create your views here.
+
+def subject(request):
+    return HttpResponse("Hello, world. You're at the subject.")
 
 # 강의 영상 선택 & 강의 페이지 이동
 @api_view(['POST'])
@@ -29,3 +32,8 @@ def note_autosave():
 
 # 마이페이지 강의 선택 (user view에 구현)
 # 복습환경 이동
+
+
+
+
+# ViewSet 사용
