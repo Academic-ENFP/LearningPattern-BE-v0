@@ -20,11 +20,14 @@ from django.urls import path,include
 from rest_framework import routers
 # from patternProject.quickapi import views
 from subject import views as subject_view
+from analysis import views as analysis_view
 
 router = routers.DefaultRouter()
 router.register(r'subject', subject_view.SubjectViewSet, basename='subject')
 router.register(r'lecture', subject_view.LectureViewSet, basename='lecture')
 router.register(r'notes', subject_view.NotesViewSet, basename='notes')
+router.register(r'analysis', analysis_view.AnalysisViewSet, basename='analysis')
+router.register(r'interaction', analysis_view.InteractionViewSet, basename='interaction')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

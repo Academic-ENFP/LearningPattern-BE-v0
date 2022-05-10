@@ -7,7 +7,6 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import Subject, Lecture, Notes
 from .serializers import SubjectSerializer, LectureSerializer, NotesSerializer
-from .viewset import SubjectViewSet, LectureViewSet, NotesViewSet
 # Create your views here.
 
 def subject(request):
