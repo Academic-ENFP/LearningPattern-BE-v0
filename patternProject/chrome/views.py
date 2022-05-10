@@ -1,6 +1,5 @@
 import fractions
 import imp
-from turtle import delay
 import cv2, threading, os
 from importlib.resources import contents
 from django.shortcuts import render
