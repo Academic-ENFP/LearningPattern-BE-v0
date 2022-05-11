@@ -15,15 +15,24 @@ Including another URLconf
 """
 import imp
 from django.contrib import admin
+from django.db import router
 from django.urls import path,include
 from rest_framework import routers
 
+# # from patternProject.quickapi import views
+# from subject import views as subject_view
+# from analysis import views as analysis_view
+
+# router = routers.DefaultRouter()
+# router.register(r'subject', subject_view.SubjectViewSet, basename='subject')
+# router.register(r'lecture', subject_view.LectureViewSet, basename='lecture')
+# router.register(r'notes', subject_view.NotesViewSet, basename='notes')
+# router.register(r'analysis', analysis_view.AnalysisViewSet, basename='analysis')
+# router.register(r'interaction', analysis_view.InteractionViewSet, basename='interaction')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('subject/', include('subject.urls')),
     path('analysis/', include('analysis.urls')),
-    path('chrome/', include('chrome.urls')),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

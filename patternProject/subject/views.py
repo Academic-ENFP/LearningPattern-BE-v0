@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from rest_framework.decorators import api_view
 from rest_framework.viewsets import ReadOnlyModelViewSet, ModelViewSet
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
