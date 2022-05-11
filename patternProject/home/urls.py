@@ -5,4 +5,7 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('signup/', views.UserCreate.as_view()),
+    # path('signin/', signin),
+    path('api-auth/', include('rest_framework.urls')),
 ]
