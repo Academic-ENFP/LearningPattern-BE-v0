@@ -1,8 +1,12 @@
 from django.urls import path, include
+from rest_framework.routers import DefaultRouter 
+from .views import SubjectViewSet, LectureViewSet
 
-from . import views
 
+router = DefaultRouter()
+router.register('subject', SubjectViewSet, basename="subject")
+router.register('lectuer', LectureViewSet, basename="lectuer")
 
 urlpatterns = [
-    path('', views.subject, name='subject'),
+    path('', include(router.urls)),
 ]

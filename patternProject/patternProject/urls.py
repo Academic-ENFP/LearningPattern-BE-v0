@@ -17,14 +17,10 @@ import imp
 from django.contrib import admin
 from django.urls import path,include
 from rest_framework import routers
-# from patternProject.quickapi import views
-from quickapi import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('quickapi/', include('rest_framework.urls', namespace='rest_framework')),
-    path('quickapi/', include('quickapi.urls')),
     path('', include('home.urls')),
     path('subject/', include('subject.urls')),
     path('analysis/', include('analysis.urls')),

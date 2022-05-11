@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from rest_framework.decorators import api_view
-from django.http import HttpResponse
+from rest_framework.viewsets import ReadOnlyModelViewSet, ModelViewSet
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from .models import Subject, Lecture, Notes
+from .serializers import SubjectSerializer, LectureSerializer, NotesSerializer
 # Create your views here.
 
-def subject(request):
-    return HttpResponse("Hello, world. You're at the subject.")
 
 # 강의 영상 선택 & 강의 페이지 이동
 @api_view(['POST'])
@@ -34,6 +35,24 @@ def note_autosave():
 # 복습환경 이동
 
 
+# 과목 정보 입력받기
+class SubjectViewSet(ModelViewSet):
+    authentication_classes = [BasicAuthentication, SessionAuthentication]
+    queryset = Subject.objects.all()
+    serializer_class = SubjectSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(student = self.request.user)
 
 
-# ViewSet 사용
+
+# 입력받은 강의정보로 lecture 필드 생성
+# 입력받은 강의 url 통해 lecture 페이지 이동
+class LectureViewSet(ModelViewSet):
+    queryset = Lecture.objects.all()
+    serializer_class = LectureSerializer
+    
+    # def perform_create(self, serializer):
+    #     sub_name = serializer.
+    #     sub = Subject.objects.get(name="객체지향개발론")
+    #     serializer.save(subject = sub)

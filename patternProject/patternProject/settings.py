@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'analysis.apps.AnalysisConfig',
     'timestamp.apps.TimestampConfig',
     'chrome.apps.ChromConfig',
-    'quickapi.apps.QuickapiConfig',
     'rest_framework',
 ]
 
