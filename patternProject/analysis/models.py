@@ -24,8 +24,8 @@ class Interaction(models.Model):
     lecture = models.ForeignKey(
         Lecture, on_delete=models.CASCADE, related_name='interaction_lecture')
     interaction_type = models.CharField(choices=EVENT, max_length=20)
-    interaction_time_real = models.TimeField()
-    interaction_time_lecture = models.TimeField()
+    interaction_time_real = models.CharField(max_length=20)
+    interaction_time_lecture = models.CharField(max_length=20)
     
     def __str__(self):
         return self.interaction_idx
