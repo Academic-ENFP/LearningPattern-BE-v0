@@ -7,5 +7,4 @@ router.register('subject', views.SubjectViewSet, basename='subject')
 
 urlpatterns = [
     # path('', views.subject, name='subject'),
-    path('', include(router.urls))
 ]
