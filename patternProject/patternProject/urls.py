@@ -18,7 +18,8 @@ from django.contrib import admin
 from django.db import router
 from django.urls import path,include
 from rest_framework import routers
-# from patternProject.quickapi import views
+
+# # from patternProject.quickapi import views
 from subject import views as subject_view
 from analysis import views as analysis_view
 from django.views.generic import TemplateView
@@ -36,8 +37,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'api/', include(router.urls)),
     path(r'api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('quickapi/', include('quickapi.urls')),
     # path('', include('home.urls')),
-    #path('subject/', include('subject.urls')),
-    path('analysis/', include('analysis.urls')),
+    # path('subject/', include('subject.urls')),
+    # path('analysis/', include('analysis.urls')),
 ]

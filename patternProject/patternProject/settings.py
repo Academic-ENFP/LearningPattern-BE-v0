@@ -41,9 +41,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'subject.apps.SubjectConfig',
     'analysis.apps.AnalysisConfig',
-    'timestamp.apps.TimestampConfig',
     'chrome.apps.ChromConfig',
-    'quickapi.apps.QuickapiConfig',
     'rest_framework',
     'corsheaders',
 ]
@@ -149,9 +147,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Pagination 페이지네이션 사용
 REST_FRAMEWORK ={
-    # 'DEFAULT_PERMISSION_CLASSES': [
-    #     'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    # ]
-    'DEFAILT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE' : 2
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
 }

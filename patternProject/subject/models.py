@@ -26,8 +26,8 @@ class Lecture(models.Model):
     degree = models.IntegerField(null=True, blank=True)
     create_date = models.DateField(auto_now_add=True)
     complet_date = models.DateField(auto_now_add=True)
-    lecture_time = models.TimeField()
-    learning_time = models.TimeField()
+    lecture_time = models.CharField(max_length=20)
+    learning_time = models.CharField(max_length=20)
     state = models.CharField(max_length=20, choices=choice_state)
     url = models.URLField(primary_key=True, max_length=200)
     
